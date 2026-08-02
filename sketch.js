@@ -550,8 +550,16 @@ function drawLabels(leafProgress) {
 
   for (let node of nodes.filter(n => n.type === "influence")) {
     if (leafProgress < 0.15) continue;
+    let labelY = node.y + node.size * leafProgress + 18;
+    textFont(FONT_DISPLAY);
     textSize(12);
-    drawOutlinedText(node.name.toUpperCase(), node.x, node.y + node.size * leafProgress + 18, 220 * leafProgress);
+    drawOutlinedText(node.name.toUpperCase(), node.x, labelY, 220 * leafProgress);
+
+    if (node.role) {
+      textFont(FONT_MONO);
+      textSize(9.5);
+      drawOutlinedText(node.role.toUpperCase(), node.x, labelY + 15, 170 * leafProgress);
+    }
   }
 }
 
@@ -624,6 +632,53 @@ function drawSidebar() {
   text("HOVER a star to preview", x, y);
   y += 17;
   text("CLICK to pin it open", x, y);
+
+  drawSidebarIcons(x);
+}
+
+// search / filter / notes — visual chrome for where this goes next,
+// not wired up to anything yet (same honesty as the nav list above)
+function drawSidebarIcons(x) {
+  let iconY = height - 50;
+  let spacing = 46;
+  drawSearchIcon(x + 8, iconY, color(119, 247, 218));
+  drawFilterIcon(x + 8 + spacing, iconY, color(255, 212, 95));
+  drawEditIcon(x + 8 + spacing * 2, iconY, color(255, 92, 168));
+}
+
+function drawSearchIcon(x, y, col) {
+  noFill();
+  stroke(col);
+  strokeWeight(1.6);
+  circle(x, y, 15);
+  line(x + 5.5, y + 5.5, x + 11, y + 11);
+  noStroke();
+}
+
+function drawFilterIcon(x, y, col) {
+  stroke(col);
+  strokeWeight(1.6);
+  line(x - 9, y - 6, x + 9, y - 6);
+  line(x - 9, y, x + 9, y);
+  line(x - 9, y + 6, x + 9, y + 6);
+  noStroke();
+  fill(col);
+  circle(x - 3, y - 6, 4.5);
+  circle(x + 2.5, y, 4.5);
+  circle(x - 2, y + 6, 4.5);
+}
+
+function drawEditIcon(x, y, col) {
+  noFill();
+  stroke(col);
+  strokeWeight(1.6);
+  beginShape();
+  vertex(x - 7, y + 7);
+  vertex(x + 4, y - 5);
+  vertex(x + 8, y - 1);
+  vertex(x - 3, y + 11);
+  endShape(CLOSE);
+  noStroke();
 }
 
 function drawSunburstIcon(cx, cy, r) {
