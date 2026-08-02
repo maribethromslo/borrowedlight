@@ -65,6 +65,7 @@ const nodes = [
     color: "#ffd45f",
     size: 16,
     icon: "film",
+    role: "Filmmaker",
     photo: "images/agnes-varda.png",
     note: "Playful, humanist lens on everyday life informs Gerwig's storytelling and perspective."
   },
@@ -78,6 +79,7 @@ const nodes = [
     color: "#ffd45f",
     size: 16,
     icon: "film",
+    role: "Filmmaker",
     photo: "images/eric-rohmer.png",
     note: "Moments of silence, uncertainty, and pause in his dialogue-driven films echo in Gerwig's work."
   },
@@ -91,6 +93,7 @@ const nodes = [
     color: "#ffd45f",
     size: 16,
     icon: "film",
+    role: "Filmmaker",
     photo: "images/jacques-demy.png",
     note: "Color, emotion, and escapism of his Technicolor musicals shaped her world-building sensibility."
   },
@@ -104,6 +107,7 @@ const nodes = [
     color: "#ffd45f",
     size: 16,
     icon: "film",
+    role: "Filmmaker",
     photo: "images/michael-cimino.png",
     note: "Heaven's Gate cited as an influence on the epic-western scope of Little Women."
   },
@@ -117,6 +121,7 @@ const nodes = [
     color: "#ffd45f",
     size: 16,
     icon: "film",
+    role: "Filmmaker",
     photo: "images/martin-scorsese.png",
     note: "The Age of Innocence cited as a literary-adaptation touchstone for Little Women."
   },
@@ -130,6 +135,7 @@ const nodes = [
     color: "#77f7da",
     size: 16,
     icon: "book",
+    role: "Writer",
     photo: "images/joan-didion.png",
     note: "Sharp observations on identity and self-invention echo throughout Gerwig's characters."
   },
@@ -143,6 +149,7 @@ const nodes = [
     color: "#77f7da",
     size: 16,
     icon: "book",
+    role: "Writer",
     photo: "images/louisa-may-alcott.png",
     note: "Source author of Little Women; Gerwig called her \u201Cthe heroine of my adulthood.\u201D"
   },
@@ -156,6 +163,7 @@ const nodes = [
     color: "#8bdcff",
     size: 16,
     icon: "music",
+    role: "Director",
     photo: "images/vincente-minnelli.png",
     note: "\u201CMovie musicals were the first thing I ever loved\u201D \u2014 her lead influence on Little Women."
   }
